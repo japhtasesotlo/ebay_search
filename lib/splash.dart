@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:awesome_loader/awesome_loader.dart';
 import 'package:ebay_search_flutter/home.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    _delayScreen(context);
+//    _delayScreen(context);
   }
 
   @override
@@ -21,12 +22,21 @@ class _SplashState extends State<Splash> {
         body: Center(
       child: Container(
         child: Stack(
-          alignment: Alignment.center,
           children: <Widget>[
-            Image.asset(
-              'assets/logo_trans.png',
-              height: 250,
-              width: 250,
+            Align(
+              alignment: Alignment.center,
+              child: Image.asset(
+                'assets/logo_trans.png',
+                height: 250,
+                width: 250,
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: AwesomeLoader(
+                loaderType: AwesomeLoader.AwesomeLoader3,
+                color: Colors.blue,
+              ),
             ),
           ],
         ),
