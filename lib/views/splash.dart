@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:awesome_loader/awesome_loader.dart';
-import 'package:ebay_search_flutter/home.dart';
+import 'package:ebay_search_flutter/util/AppConfig.dart';
+import 'package:ebay_search_flutter/util/HexColor.dart';
+import 'package:ebay_search_flutter/views/home.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -13,7 +15,7 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-//    _delayScreen(context);
+    _delayScreen(context);
   }
 
   @override
@@ -26,16 +28,19 @@ class _SplashState extends State<Splash> {
             Align(
               alignment: Alignment.center,
               child: Image.asset(
-                'assets/logo_trans.png',
-                height: 250,
-                width: 250,
+                'assets/images/logo_trans.png',
+                height: 187,
+                width: 187,
               ),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: AwesomeLoader(
-                loaderType: AwesomeLoader.AwesomeLoader3,
-                color: Colors.blue,
+            Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: AwesomeLoader(
+                  loaderType: AwesomeLoader.AwesomeLoader3,
+                  color: HexColor(AppConfig.hexColorGreen),
+                ),
               ),
             ),
           ],
@@ -54,6 +59,6 @@ Future<void> _delayScreen(BuildContext context) async {
 void _navigateToHome(BuildContext context) {
   Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (BuildContext context) => Home(
-            title: "ebay Search",
+            title: AppConfig.appName,
           )));
 }

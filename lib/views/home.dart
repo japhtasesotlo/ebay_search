@@ -1,3 +1,5 @@
+import 'package:ebay_search_flutter/util/AppConfig.dart';
+import 'package:ebay_search_flutter/util/HexColor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,33 +12,27 @@ class Home extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<Home> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
+        backgroundColor: HexColor(AppConfig.hexColorYellow),
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+            Image.asset(
+              'assets/images/logo_trans_white.png',
+              fit: BoxFit.cover,
+              height: 69.0,
             ),
           ],
         ),
+      ),
+      body: Container(
+//        child: Text(
+//        ),
+
+        decoration: BoxDecoration(color: Colors.white70),
       ),
     );
   }
