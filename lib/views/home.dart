@@ -16,14 +16,14 @@ class _MyHomePageState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: HexColor(AppConfig.hexColorYellow),
+        backgroundColor: HexColor(AppConfig.hexColorGreen),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
               'assets/images/logo_trans_white.png',
               fit: BoxFit.cover,
-              height: 69.0,
+              height: 79.0,
             ),
           ],
         ),
