@@ -35,27 +35,24 @@ class _MyHomePageState extends State<Home> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Text('This is a text view',
-                style: TextStyle(
-                  fontFamily: 'OpenSans',
-                  fontSize: 16.0,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.bold,
-                  color: HexColor("#a6a6a6"),
+              Padding(
+                padding: EdgeInsets.all(12.0),
+                child: Text(
+                  'This is a text view',
+                  style: TextStyle(
+                    fontFamily: 'OpenSans',
+                    fontSize: 16.0,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.bold,
+                    color: HexColor(AppConfig.hexColorGrey),
+                  ),
+                  maxLines: 1,
                 ),
-                maxLines: 1,
-
-
               )
             ],
           ), //***Text View ***
-          Row(
-
-          ), //*** Search ***
-          Row(
-
-          ), //*** Search result List ***
-
+          Row(), //*** Search ***
+          Row(), //*** Search result List ***
         ],
       ),
     );

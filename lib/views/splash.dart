@@ -31,8 +31,8 @@ class _SplashState extends State<Splash> {
               alignment: Alignment.center,
               child: Image.asset(
                 'assets/images/logo_trans.png',
-                height: 187,
-                width: 187,
+                height: AppConfig.imageSize,
+                width: AppConfig.imageSize,
               ),
             ),
             Padding(
@@ -53,7 +53,7 @@ class _SplashState extends State<Splash> {
 }
 
 Future<void> _delayScreen(BuildContext context) async {
-  await Future.delayed(Duration(milliseconds: 5000), () {
+  await Future.delayed(Duration(milliseconds: AppConfig.screenTimeout), () {
     _navigateToHome(context);
   });
 }
