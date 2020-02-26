@@ -38,17 +38,22 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
-
+    -
   fonts:
-    - family: Roboto
+    - family: Open Sans
       fonts:
-        - asset: fonts/Roboto-Medium.ttf
+        - asset: fonts/OpenSans-Regular.ttf
+        - asset: fonts/OpenSans-Bold.ttf
+        - asset: fonts/OpenSans-Light.ttf
+        - asset: fonts/OpenSans-Italic.ttf
+          style: italic
 
+  uses-material-design: true
 
-  # The following line ensures that the Material Icons font is
+    # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
+
     # To add assets to your application, add an assets section, like this:
 
     # An image asset can refer to one or more resolution-specific "variants", see
