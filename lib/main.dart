@@ -2,6 +2,8 @@ import 'package:ebay_search_flutter/util/AppConfig.dart';
 import 'package:ebay_search_flutter/views/splash.dart';
 import 'package:flutter/material.dart';
 
+import 'util/AppConfig.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

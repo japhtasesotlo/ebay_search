@@ -3,6 +3,9 @@ import 'package:ebay_search_flutter/util/HexColor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../util/AppConfig.dart';
+import '../util/HexColor.dart';
+
 class Home extends StatefulWidget {
   Home({Key key, this.title}) : super(key: key);
   final String title;
@@ -30,15 +33,28 @@ class _MyHomePageState extends State<Home> {
       ),
       body: Column(
         children: <Widget>[
+          Row(
+            children: <Widget>[
+              Text('This is a text view',
+                style: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 16.0,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.bold,
+                  color: HexColor("#a6a6a6"),
+                ),
+                maxLines: 1,
 
-          Container(
-          ),
-          Container(
 
-          ),
-          Container(
+              )
+            ],
+          ), //***Text View ***
+          Row(
 
-          ),
+          ), //*** Search ***
+          Row(
+
+          ), //*** Search result List ***
 
         ],
       ),

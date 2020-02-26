@@ -6,6 +6,8 @@ import 'package:ebay_search_flutter/util/HexColor.dart';
 import 'package:ebay_search_flutter/views/home.dart';
 import 'package:flutter/material.dart';
 
+import '../util/AppConfig.dart';
+
 class Splash extends StatefulWidget {
   @override
   _SplashState createState() => _SplashState();
