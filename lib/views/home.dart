@@ -16,23 +16,31 @@ class _MyHomePageState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: HexColor(AppConfig.hexColorGreen),
+        backgroundColor: HexColor(AppConfig.hexColorYellow),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
               'assets/images/logo_trans_white.png',
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
               height: 79.0,
             ),
           ],
         ),
       ),
-      body: Container(
-//        child: Text(
-//        ),
+      body: Column(
+        children: <Widget>[
 
-        decoration: BoxDecoration(color: Colors.white70),
+          Container(
+          ),
+          Container(
+
+          ),
+          Container(
+
+          ),
+
+        ],
       ),
     );
   }
