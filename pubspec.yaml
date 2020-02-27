@@ -50,6 +50,10 @@ flutter:
         - asset: assets/fonts/OpenSans-Italic.ttf
           style: italic
 
+    - family: ebay
+      fonts:
+        - asset: assets/fonts/ebay.otf
+
   uses-material-design: true
 
     # The following line ensures that the Material Icons font is

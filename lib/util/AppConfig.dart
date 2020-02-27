@@ -1,6 +1,5 @@
 class AppConfig {
   static final String appName = "ebay Search";
-  static final String fontFamily = "OpenSans";
   static final String patternDelimiter = "#";
   static final String blank = "";
   static final int screenTimeout = 5000;
@@ -12,13 +11,14 @@ class AppConfig {
   ///Asset Paths
   static final String assetLogoSolid = "assets/images/logo_solid.png";
   static final String assetLogoTrans = "assets/images/logo_trans.png";
-  static final String assetLogoTransWhite= "assets/images/logo_trans_white.png";
+  static final String assetLogoTransWhite =
+      "assets/images/logo_trans_white.png";
   static final String assetLogoTransGrey = "assets/images/logo_trans_grey.png";
 
   ///Image Sizes
   static final double imageSplashSize = 187;
-  static final double imageAppBarSize = 60;
-  static final double imageHomeSize = 145 ;
+  static final double imageAppBarSize = 50;
+  static final double imageHomeSize = 125;
 
   /// Hex Color Codes
   static final String hexColorRed = "#e53238";
@@ -30,17 +30,28 @@ class AppConfig {
 
   ///Home screen titles
   static final String oops = "Oops!";
-  static final String homeTitle = "Nothing here yet";
-  static final String homeSubtitle = "Please search your item by clicking the search icon.";
+  static final String homeTitle = "Nothing Here Yet";
+  static final String homeSubtitle =
+      "Please search your item by clicking the search icon.";
   static final String searchItem = "Search for any item name";
 
   ///Font Sizes
-  static final double fontSizeNormal = 14.0;
-  static final double fontSizeLarge = 16.0;
+  static final double fontSizeTiny = 14.0;
+  static final double fontSizeMedium = 16.0;
+  static final double fontSizeLarge = 18.0;
   static final double fontSizeHeader = 20.0;
 
+  ///Fonts
+  static final String openSansFontFamily = "OpenSans";
+  static final String ebayFontFamily = "ebay";
+
   ///Padding and Margin
+  static final double marginZero = 0;
   static final double marginSmall = 4.0;
   static final double marginNormal = 12.0;
   static final double marginLarge = 16.0;
+  static final double marginEdge = 20.0;
+  static final double marginBottomLoader = 35.0;
+  static final double marginTopImage = 105;
+  static final double marginTopSubtext = 16.0;
 }

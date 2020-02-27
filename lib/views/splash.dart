@@ -36,14 +36,18 @@ class _SplashState extends State<Splash> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(AppConfig.marginNormal),
+              padding: EdgeInsets.fromLTRB(
+                  AppConfig.marginNormal,
+                  AppConfig.marginNormal,
+                  AppConfig.marginNormal,
+                  AppConfig.marginBottomLoader),
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: AwesomeLoader(
                   loaderType: AwesomeLoader.AwesomeLoader3,
-                  color: HexColor(AppConfig.hexColorGreen),
+                  color: HexColor(AppConfig.hexColorBlue),
                 ),
-            ),
+              ),
             ),
           ],
         ),

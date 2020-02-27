@@ -2,6 +2,7 @@ import 'package:ebay_search_flutter/util/AppConfig.dart';
 import 'package:ebay_search_flutter/util/HexColor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import '../util/AppConfig.dart';
 import '../util/HexColor.dart';
@@ -18,61 +19,78 @@ class _MyHomePageState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: HexColor(AppConfig.hexColorYellow),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            Image.asset(
-              AppConfig.assetLogoTransWhite,
-              fit: BoxFit.contain,
-              height: AppConfig.imageAppBarSize,
+        appBar: AppBar(
+          backgroundColor: HexColor(AppConfig.hexColorGreen),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Image.asset(
+                AppConfig.assetLogoTransWhite,
+                fit: BoxFit.contain,
+                height: AppConfig.imageAppBarSize,
+              ),
+            ],
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {},
             ),
           ],
         ),
-
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: () {},
-          ),
-        ],
-      ),
-        body:
-        Align(
-          alignment: Alignment.center,
+        body: Align(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.asset(
-                AppConfig.assetLogoTransGrey,
-                height: AppConfig.imageHomeSize,
-                width: AppConfig.imageHomeSize,
-              ),
-              Text(
-                AppConfig.homeTitle,
-                style: TextStyle(
-                  fontFamily: AppConfig.fontFamily,
-                  fontSize: AppConfig.fontSizeHeader,
-                  fontStyle: FontStyle.normal,
-                  color: HexColor(AppConfig.hexColorGrey),
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                    AppConfig.marginZero,
+                    AppConfig.marginTopImage,
+                    AppConfig.marginZero,
+                    AppConfig.marginZero),
+                child: Image.asset(
+                  AppConfig.assetLogoTransGrey,
+                  height: AppConfig.imageHomeSize,
+                  width: AppConfig.imageHomeSize,
                 ),
-                maxLines: 1,
               ),
-              Text(
-                AppConfig.homeSubtitle,
-                style: TextStyle(
-                  fontFamily: AppConfig.fontFamily,
-                  fontSize: AppConfig.fontSizeNormal,
-                  fontStyle: FontStyle.normal,
-                  color: HexColor(AppConfig.hexColorGrey),
+              Padding(
+                padding: EdgeInsets.fromLTRB(
+                    AppConfig.marginEdge, 7.0, AppConfig.marginEdge, 1.0),
+                child: Text(
+                  AppConfig.homeTitle,
+                  style: TextStyle(
+                    fontFamily: AppConfig.ebayFontFamily,
+                    fontSize: AppConfig.fontSizeLarge,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.bold,
+                    color: HexColor(AppConfig.hexColorGrey),
+                  ),
+                  maxLines: 1,
                 ),
-                maxLines: 1,
               ),
-
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(
+                      AppConfig.marginEdge,
+                      AppConfig.marginTopSubtext,
+                      AppConfig.marginEdge,
+                      AppConfig.marginZero),
+                  child: Text(
+                    AppConfig.homeSubtitle,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: AppConfig.ebayFontFamily,
+                      fontSize: AppConfig.fontSizeMedium,
+                      fontStyle: FontStyle.normal,
+                      color: HexColor(AppConfig.hexColorGrey),
+                    ),
+                    maxLines: 2,
+                  ),
+                ),
+              ),
             ],
           ),
-        )
-    );
+        ));
   }
 }
