@@ -20,7 +20,7 @@ class _MyHomePageState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: HexColor(AppConfig.hexColorGreen),
+          backgroundColor: HexColor(AppConfig.hexColorBlue),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
