@@ -21,40 +21,58 @@ class _MyHomePageState extends State<Home> {
       appBar: AppBar(
         backgroundColor: HexColor(AppConfig.hexColorYellow),
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Image.asset(
-              'assets/images/logo_trans_white.png',
+              AppConfig.assetLogoTransWhite,
               fit: BoxFit.contain,
-              height: 79.0,
+              height: AppConfig.imageAppBarSize,
             ),
           ],
         ),
-      ),
-      body: Column(
-        children: <Widget>[
-          Row(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(12.0),
-                child: Text(
-                  'This is a text view',
-                  style: TextStyle(
-                    fontFamily: 'OpenSans',
-                    fontSize: 16.0,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.bold,
-                    color: HexColor(AppConfig.hexColorGrey),
-                  ),
-                  maxLines: 1,
-                ),
-              )
-            ],
-          ), //***Text View ***
-          Row(), //*** Search ***
-          Row(), //*** Search result List ***
+
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
+          ),
         ],
       ),
+        body:
+        Align(
+          alignment: Alignment.center,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Image.asset(
+                AppConfig.assetLogoTransGrey,
+                height: AppConfig.imageHomeSize,
+                width: AppConfig.imageHomeSize,
+              ),
+              Text(
+                AppConfig.homeTitle,
+                style: TextStyle(
+                  fontFamily: AppConfig.fontFamily,
+                  fontSize: AppConfig.fontSizeHeader,
+                  fontStyle: FontStyle.normal,
+                  color: HexColor(AppConfig.hexColorGrey),
+                ),
+                maxLines: 1,
+              ),
+              Text(
+                AppConfig.homeSubtitle,
+                style: TextStyle(
+                  fontFamily: AppConfig.fontFamily,
+                  fontSize: AppConfig.fontSizeNormal,
+                  fontStyle: FontStyle.normal,
+                  color: HexColor(AppConfig.hexColorGrey),
+                ),
+                maxLines: 1,
+              ),
+
+            ],
+          ),
+        )
     );
   }
 }

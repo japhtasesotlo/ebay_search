@@ -30,20 +30,20 @@ class _SplashState extends State<Splash> {
             Align(
               alignment: Alignment.center,
               child: Image.asset(
-                'assets/images/logo_trans.png',
-                height: AppConfig.imageSize,
-                width: AppConfig.imageSize,
+                AppConfig.assetLogoTrans,
+                height: AppConfig.imageSplashSize,
+                width: AppConfig.imageSplashSize,
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: EdgeInsets.all(AppConfig.marginNormal),
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: AwesomeLoader(
                   loaderType: AwesomeLoader.AwesomeLoader3,
                   color: HexColor(AppConfig.hexColorGreen),
                 ),
-              ),
+            ),
             ),
           ],
         ),
