@@ -30,7 +30,7 @@ class _SplashState extends State<Splash> {
             Align(
               alignment: Alignment.center,
               child: Image.asset(
-                AppConfig.assetLogoTrans,
+                AppConfig.pathLogoTrans,
                 height: AppConfig.imageSplashSize,
                 width: AppConfig.imageSplashSize,
               ),

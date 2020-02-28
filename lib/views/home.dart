@@ -26,7 +26,7 @@ class _MyHomePageState extends State<Home> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Image.asset(
-                AppConfig.assetLogoTransWhite,
+                AppConfig.pathLogoTransWhite,
                 fit: BoxFit.contain,
                 height: AppConfig.imageAppBarSize,
               ),
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<Home> {
                     AppConfig.marginZero,
                     AppConfig.marginZero),
                 child: Image.asset(
-                  AppConfig.assetLogoTransGrey,
+                  AppConfig.pathLogoTransGrey,
                   height: AppConfig.imageHomeSize,
                   width: AppConfig.imageHomeSize,
                 ),

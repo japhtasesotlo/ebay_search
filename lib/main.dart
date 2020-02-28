@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
+
         indicatorColor: HexColor(AppConfig.ebayColorGreen),
       ),
       home: Splash(),
