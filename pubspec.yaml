@@ -25,8 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   awesome_loader: ^0.0.3
   material_search: 0.2.8
-
-
+  flappy_search_bar: ^1.7.2
 
 dev_dependencies:
   flutter_test:

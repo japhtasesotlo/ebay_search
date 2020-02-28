@@ -1,4 +1,5 @@
 import 'package:ebay_search_flutter/util/AppConfig.dart';
+import 'package:ebay_search_flutter/util/EbaySearchDelegate.dart';
 import 'package:ebay_search_flutter/util/HexColor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _MyHomePageState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: HexColor(AppConfig.hexColorBlue),
+          backgroundColor: HexColor(AppConfig.ebayColorBlue),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -34,7 +35,12 @@ class _MyHomePageState extends State<Home> {
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.search),
-              onPressed: () {},
+              onPressed: () {
+                showSearch(
+                  context: context,
+                  delegate: EbaySearchDelegate(),
+                );
+              },
             ),
           ],
         ),

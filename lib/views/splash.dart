@@ -45,7 +45,7 @@ class _SplashState extends State<Splash> {
                 alignment: Alignment.bottomCenter,
                 child: AwesomeLoader(
                   loaderType: AwesomeLoader.AwesomeLoader3,
-                  color: HexColor(AppConfig.hexColorBlue),
+                  color: HexColor(AppConfig.ebayColorBlue),
                 ),
               ),
             ),
