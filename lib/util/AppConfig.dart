@@ -60,4 +60,28 @@ class AppConfig {
   static final String textFewChars =
       "In order to proceed, your search term must be longer than two letters";
   static final String ok = "Ok";
+
+  ///API defaults
+  static final String baseUrl = "https://api.ebay.com";
+  static final String appId = "JaphtaSe-FlutterA-PRD-369ee5442-6ee60ae8";
+  static final String devId = "0888aab4-cbb5-4277-84c8-a9918448e0cc";
+  static final String clientSecret = "PRD-69ee5442c831-e425-41e1-80fa-7222";
+  static final String scopeList =
+      "https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.marketing.readonly%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.marketing%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.inventory.readonly%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.inventory%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.account.readonly%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.account%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.fulfillment.readonly%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.fulfillment%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.analytics.readonly%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.finances%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.payment.dispute%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fcommerce.identity.readonly";
+  static final String authValue = "Basic " + appId + ":" + clientSecret;
+
+  ///API Keys
+  static final String keyContentType = "Content-Type";
+  static final String keyAuthorization = "Authorization";
+  static final String keyGrantType = "grant_type";
+  static final String keyScope = "scope";
+
+  ///Endpoints
+  static final String endpointToken = baseUrl + "/identity/v1/oauth2/token";
+  static final String endpointSearch =
+      baseUrl + "/buy/browse/v1/item_summary/search?q=";
+
+  ///Mock Endpoints
+  static final String mockEndpoint =
+      "http://www.mocky.io/v2/5e58d7832f000077099621b4";
 }
