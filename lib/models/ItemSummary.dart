@@ -1,3 +1,5 @@
+import 'package:ebay_search_flutter/views/Image.dart';
+
 import 'ItemLocation.dart';
 import 'MarketingPrice.dart';
 import 'Price.dart';
@@ -134,22 +136,6 @@ class ItemSummary {
           this.additionalImages.map((v) => v.toJson()).toList();
     }
     data['adultOnly'] = this.adultOnly;
-    return data;
-  }
-}
-
-class Image {
-  String imageUrl;
-
-  Image(this.imageUrl);
-
-  Image.fromJson(Map<String, dynamic> json) {
-    imageUrl = json['imageUrl'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['imageUrl'] = this.imageUrl;
     return data;
   }
 }

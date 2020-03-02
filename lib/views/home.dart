@@ -13,10 +13,10 @@ class Home extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<Home> {
+class _HomePageState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,16 +1,21 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:ebay_search_flutter/interfaces/CardListener.dart';
 import 'package:ebay_search_flutter/models/Item.dart';
 import 'package:ebay_search_flutter/models/ItemSummary.dart';
 import 'package:ebay_search_flutter/util/AppConfig.dart';
 import 'package:ebay_search_flutter/util/HexColor.dart';
+import 'package:ebay_search_flutter/views/CardListTile.dart';
+import 'package:ebay_search_flutter/views/detail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+
 import 'package:http/http.dart' as http;
 
 // ignore: must_be_immutable
-class ItemsListView extends StatelessWidget {
+class ItemsListView extends StatelessWidget implements CardListener {
   String query;
   String endpoint = "";
   Item item;
@@ -77,31 +82,12 @@ class ItemsListView extends StatelessWidget {
       itemCount: data.length,
       itemBuilder: (context, index) {
         return Card(
-          child: Padding(
-            padding: const EdgeInsets.only(
-                top: 16.0, bottom: 16.0, left: 16.0, right: 16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  searchedItems[index].title,
-                  style: TextStyle(
-                      fontSize: AppConfig.fontSizeMedium,
-                      fontWeight: FontWeight.bold),
-                ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(
-                      AppConfig.marginZero,
-                      AppConfig.marginSmall,
-                      AppConfig.marginZero,
-                      AppConfig.marginZero),
-                  child: Text(
-                    searchedItems[index].price.currency,
-                    style: TextStyle(color: Colors.grey.shade600),
-                  ),
-                )
-              ],
-            ),
+          elevation: 1.0,
+          child: CardListTile(
+            title: data[index].title,
+            subtitle: data[index].price.value,
+            cardListener: this,
+            item: data[index],
           ),
         );
       },
@@ -113,6 +99,12 @@ class ItemsListView extends StatelessWidget {
       fontSize: AppConfig.fontSizeLarge,
       fontStyle: FontStyle.normal,
       color: Colors.black);
+
+  @override
+  void isCardClicked(BuildContext context, ItemSummary itemSummary) {
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (BuildContext context) => Detail(item: itemSummary)));
+  }
 }
 
 class Loader extends StatelessWidget {
