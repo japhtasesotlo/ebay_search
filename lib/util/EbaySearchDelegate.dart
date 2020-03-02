@@ -1,32 +1,10 @@
-import 'dart:async';
-import 'dart:convert';
-
-import 'package:ebay_search_flutter/models/Item.dart';
+import 'package:ebay_search_flutter/views/ItemsListView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 import 'AppConfig.dart';
 
 class EbaySearchDelegate extends SearchDelegate {
-  String endpoint = "";
-  Item item;
-
-  Future<Item> searchItems(String query) async {
-    endpoint = AppConfig.endpointSearch + query;
-    print("Endpoint: $endpoint");
-
-    final response = await http.get(AppConfig.mockEndpoint);
-    if (response.statusCode == 200) {
-      item = Item.fromJson(json.decode(response.body));
-      return item;
-    }
-
-    else {
-      throw Exception('Failed to load album');
-    }
-  }
-
   @override
   ThemeData appBarTheme(BuildContext context) {
     ThemeData theme;
@@ -54,6 +32,7 @@ class EbaySearchDelegate extends SearchDelegate {
         icon: Icon(Icons.clear),
         onPressed: () {
           query = AppConfig.blank;
+          ItemsListView(query);
         },
       ),
     ];
@@ -95,13 +74,8 @@ class EbaySearchDelegate extends SearchDelegate {
         ],
       );
     } else {
-      searchItems(query);
+      return ItemsListView(query);
     }
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[],
-    );
   }
 
   @override

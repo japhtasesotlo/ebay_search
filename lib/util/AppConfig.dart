@@ -3,6 +3,7 @@ class AppConfig {
   static final String patternDelimiter = "#";
   static final String blank = "";
   static final int screenTimeout = 5000;
+  static final double loaderStokeWidth = 5.0;
 
   ///Hex Helper Values
   static final int hexMaxLength = 6;
@@ -83,5 +84,7 @@ class AppConfig {
 
   ///Mock Endpoints
   static final String mockEndpoint =
-      "http://www.mocky.io/v2/5e58d7832f000077099621b4";
+      "http://www.mocky.io/v2/5e5c3b213000002f5df9f33b";
+//  static final String mockEndpoint =
+//      "http://www.mocky.io/v2/5e58d7832f000077099621b4";
 }

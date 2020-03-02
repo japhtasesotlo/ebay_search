@@ -14,7 +14,7 @@ class ItemSummary {
   MarketingPrice marketingPrice;
   String condition;
   String conditionId;
-  List<Image> thumbnailImages;
+  List<ThumbnailImage> thumbnailImages;
   List<ShippingOption> shippingOptions;
   List<String> buyingOptions;
   Price currentBidPrice;
@@ -59,12 +59,12 @@ class ItemSummary {
         : null;
     condition = json['condition'];
     conditionId = json['conditionId'];
-    if (json['thumbnailImages'] != null) {
-      thumbnailImages = new List<Image>();
-      json['thumbnailImages'].forEach((v) {
-        thumbnailImages.add(new Image.fromJson(json['thumbnailImages']));
-      });
-    }
+//    if (json['thumbnailImages'] != null) {
+//      thumbnailImages = new List<ThumbnailImage>();
+//      json['thumbnailImages'].forEach((v) {
+//        thumbnailImages.add(new ThumbnailImage.fromJson(json['thumbnailImages']));
+//      });
+//    }
     if (json['shippingOptions'] != null) {
       shippingOptions = new List<ShippingOption>();
       json['shippingOptions'].forEach((v) {
@@ -86,12 +86,7 @@ class ItemSummary {
         categories.add(new Category.fromJson(v));
       });
     }
-    if (json['additionalImages'] != null) {
-      additionalImages = new List<Image>();
-      json['additionalImages'].forEach((v) {
-        additionalImages.add(new Image.fromJson(json['additionalImages']));
-      });
-    }
+//   x
     adultOnly = json['adultOnly'];
   }
 
@@ -171,6 +166,22 @@ class Category {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['categoryId'] = this.categoryId;
+    return data;
+  }
+}
+
+class ThumbnailImage {
+  String imageUrl;
+
+  ThumbnailImage(this.imageUrl);
+
+  ThumbnailImage.fromJson(Map<String, dynamic> json) {
+    imageUrl = json['imageUrl'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['imageUrl'] = this.imageUrl;
     return data;
   }
 }
