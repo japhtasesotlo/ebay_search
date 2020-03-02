@@ -13,18 +13,14 @@ class ItemSummary {
   Price price;
   String itemHref;
   Seller seller;
-  MarketingPrice marketingPrice;
   String condition;
   String conditionId;
   List<ThumbnailImage> thumbnailImages;
   List<ShippingOption> shippingOptions;
   List<String> buyingOptions;
-  Price currentBidPrice;
-  String epid;
   String itemWebUrl;
   ItemLocation itemLocation;
   List<Category> categories;
-  List<Image> additionalImages;
   bool adultOnly;
 
   ItemSummary(
@@ -34,18 +30,14 @@ class ItemSummary {
       this.price,
       this.itemHref,
       this.seller,
-      this.marketingPrice,
       this.condition,
       this.conditionId,
       this.thumbnailImages,
       this.shippingOptions,
       this.buyingOptions,
-      this.currentBidPrice,
-      this.epid,
       this.itemWebUrl,
       this.itemLocation,
       this.categories,
-      this.additionalImages,
       this.adultOnly);
 
   ItemSummary.fromJson(Map<String, dynamic> json) {
@@ -56,17 +48,8 @@ class ItemSummary {
     itemHref = json['itemHref'];
     seller =
         json['seller'] != null ? new Seller.fromJson(json['seller']) : null;
-    marketingPrice = json['marketingPrice'] != null
-        ? new MarketingPrice.fromJson(json['marketingPrice'])
-        : null;
     condition = json['condition'];
     conditionId = json['conditionId'];
-//    if (json['thumbnailImages'] != null) {
-//      thumbnailImages = new List<ThumbnailImage>();
-//      json['thumbnailImages'].forEach((v) {
-//        thumbnailImages.add(new ThumbnailImage.fromJson(json['thumbnailImages']));
-//      });
-//    }
     if (json['shippingOptions'] != null) {
       shippingOptions = new List<ShippingOption>();
       json['shippingOptions'].forEach((v) {
@@ -74,10 +57,6 @@ class ItemSummary {
       });
     }
     buyingOptions = json['buyingOptions'].cast<String>();
-    currentBidPrice = json['currentBidPrice'] != null
-        ? new Price.fromJson(json['currentBidPrice'])
-        : null;
-    epid = json['epid'];
     itemWebUrl = json['itemWebUrl'];
     itemLocation = json['itemLocation'] != null
         ? new ItemLocation.fromJson(json['itemLocation'])
@@ -106,9 +85,6 @@ class ItemSummary {
     if (this.seller != null) {
       data['seller'] = this.seller.toJson();
     }
-    if (this.marketingPrice != null) {
-      data['marketingPrice'] = this.marketingPrice.toJson();
-    }
     data['condition'] = this.condition;
     data['conditionId'] = this.conditionId;
     if (this.thumbnailImages != null) {
@@ -120,20 +96,12 @@ class ItemSummary {
           this.shippingOptions.map((v) => v.toJson()).toList();
     }
     data['buyingOptions'] = this.buyingOptions;
-    if (this.currentBidPrice != null) {
-      data['currentBidPrice'] = this.currentBidPrice.toJson();
-    }
-    data['epid'] = this.epid;
     data['itemWebUrl'] = this.itemWebUrl;
     if (this.itemLocation != null) {
       data['itemLocation'] = this.itemLocation.toJson();
     }
     if (this.categories != null) {
       data['categories'] = this.categories.map((v) => v.toJson()).toList();
-    }
-    if (this.additionalImages != null) {
-      data['additionalImages'] =
-          this.additionalImages.map((v) => v.toJson()).toList();
     }
     data['adultOnly'] = this.adultOnly;
     return data;

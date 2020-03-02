@@ -39,13 +39,15 @@ class Detail extends StatelessWidget {
                   Expanded(
                     child: Container(
                       child: Text(
-                        item.title,
+                        (item.title != null)
+                            ? item.title
+                            : "No data",
                         style: TextStyle(
                           fontFamily: AppConfig.openSansFontFamily,
                           fontSize: AppConfig.fontSizeHeader,
                           fontStyle: FontStyle.normal,
                           fontWeight: FontWeight.bold,
-                          color: HexColor(AppConfig.ebayColorGreen),
+                          color: HexColor(AppConfig.ebayColorBlue),
                         ),
                         maxLines: 2,
                       ),
@@ -55,7 +57,9 @@ class Detail extends StatelessWidget {
                   Expanded(
                     child: Container(
                         child: Text(
-                          item.price.value,
+                          (item.price.value != null)
+                              ? item.price.value
+                              : "No data",
                           style: TextStyle(
                             fontFamily: AppConfig.openSansFontFamily,
                             fontSize: AppConfig.fontSizeLarge,
@@ -82,28 +86,25 @@ class Detail extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 10.0, 0, 0),
-                      child: styleMetaText(AppConfig.currentBidPrice,
-                          item.currentBidPrice.value),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(0, 10.0, 0, 0),
                       child: styleMetaText(AppConfig.itemLocation,
-                          item.itemLocation.country),
+                          (item.itemLocation.country != null) ? item
+                              .itemLocation.country : "No data"
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 10.0, 0, 0),
                       child: styleMetaText(AppConfig.shippingCost,
-                          item.shippingOptions.first.shippingCost.value),
+                          (item.shippingOptions.first.shippingCost.value !=
+                              null) ? item.shippingOptions.first.shippingCost
+                              .value : "No data"
+                      ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(0, 10.0, 0, 0),
-                      child: styleMetaText(AppConfig.discountAmount,
-                          item.marketingPrice.discountAmount.value),
-                    ),
+
                     Padding(
                       padding: EdgeInsets.fromLTRB(0, 10.0, 0, 0),
                       child: styleMetaText(AppConfig.sellerName,
-                          item.seller.username),
+                          (item.seller.username !=
+                              null) ? item.seller.username : "No data"),
                     ),
                   ],
                 )
@@ -125,7 +126,7 @@ class Detail extends StatelessWidget {
                 fontFamily: AppConfig.openSansFontFamily,
                 fontSize: AppConfig.fontSizeLarge,
                 fontStyle: FontStyle.normal,
-                color: HexColor(AppConfig.hexColorGrey),
+                color: HexColor(AppConfig.ebayColorBlue),
                 fontWeight: FontWeight.bold)),
       ]),
       maxLines: 1,

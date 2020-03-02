@@ -1,25 +1,33 @@
+import 'package:ebay_search_flutter/interfaces/DialogClickListener.dart';
+import 'package:ebay_search_flutter/util/DialogHelper.dart';
 import 'package:ebay_search_flutter/views/ItemsListView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'AppConfig.dart';
 
-class EbaySearchDelegate extends SearchDelegate {
+class EbaySearchDelegate extends SearchDelegate implements DialogClickListener {
+
   @override
   ThemeData appBarTheme(BuildContext context) {
     ThemeData theme;
     if (context != null) {
       theme = Theme.of(context);
       theme.copyWith(
-        appBarTheme: AppBarTheme(
-          textTheme: TextTheme(
-              title: TextStyle(
-            color: Colors.white,
-            fontFamily: AppConfig.openSansFontFamily,
-            fontStyle: FontStyle.normal,
-            fontSize: AppConfig.fontSizeMedium,
-          )),
-        ),
+          appBarTheme: AppBarTheme(
+            textTheme: TextTheme(
+                title: TextStyle(
+                  color: Colors.white,
+                  fontFamily: AppConfig.openSansFontFamily,
+                  fontStyle: FontStyle.normal,
+                  fontSize: AppConfig.fontSizeMedium,
+                )),
+          ),
+          inputDecorationTheme: InputDecorationTheme(hintStyle: Theme
+              .of(context)
+              .textTheme
+              .title
+              .copyWith(color: Colors.white),)
       );
     }
     return theme;
@@ -52,27 +60,8 @@ class EbaySearchDelegate extends SearchDelegate {
   Widget buildResults(BuildContext context) {
     int queryLength = query.length;
     if (queryLength != 0 && queryLength < 3) {
-      return CupertinoAlertDialog(
-        title: Align(
-          alignment: Alignment.center,
-          child: Text(AppConfig.error, style: popUpStyle),
-        ),
-        content: Align(
-            alignment: Alignment.center,
-            child: Padding(
-              padding: EdgeInsets.all(AppConfig.marginNormal),
-              child: Text(AppConfig.textFewChars, style: popUpStyle),
-            )),
-        actions: <Widget>[
-          Align(
-            alignment: Alignment.center,
-            child: FlatButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text(AppConfig.ok, style: popUpStyle),
-            ),
-          ),
-        ],
-      );
+      return DialogHelper(this).getDialog(
+          context, AppConfig.error, AppConfig.textFewChars);
     } else {
       return ItemsListView(query);
     }
@@ -83,9 +72,8 @@ class EbaySearchDelegate extends SearchDelegate {
     return Column();
   }
 
-  final TextStyle popUpStyle = TextStyle(
-      fontFamily: AppConfig.openSansFontFamily,
-      fontSize: AppConfig.fontSizeLarge,
-      fontStyle: FontStyle.normal,
-      color: Colors.black);
+  @override
+  void onButtonClick(BuildContext context) {
+    Navigator.pop(context);
+  }
 }

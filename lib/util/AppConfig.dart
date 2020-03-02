@@ -61,21 +61,25 @@ class AppConfig {
   static final String textFewChars =
       "In order to proceed, your search term must be longer than two letters";
   static final String ok = "Ok";
+  static final String noResult = "Could not get the searched item";
 
   ///API defaults
   static final String baseUrl = "https://api.ebay.com";
   static final String appId = "JaphtaSe-FlutterA-PRD-369ee5442-6ee60ae8";
   static final String devId = "0888aab4-cbb5-4277-84c8-a9918448e0cc";
   static final String clientSecret = "PRD-69ee5442c831-e425-41e1-80fa-7222";
-  static final String scopeList =
-      "https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.marketing.readonly%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.marketing%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.inventory.readonly%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.inventory%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.account.readonly%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.account%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.fulfillment.readonly%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.fulfillment%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.analytics.readonly%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.finances%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fsell.payment.dispute%20https:%3A%2F%2Fapi.ebay.com%2Foauth%2Fapi_scope%2Fcommerce.identity.readonly";
-  static final String authValue = "Basic " + appId + ":" + clientSecret;
+  static final String authToken = "v^1.1#i^1#f^0#p^3#r^0#I^3#t^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";
+  static final String authEndUserContextValue = "contextualLocation=country=<2CharCountryCode>,zip=<5DigitCode>,affiliateCampaignId=<ePNCampaignId>,affiliateReferenceId=<referenceId>";
+  static final String authMarketValue = "EBAY_US";
+  static final String authContentTypeValue = "application/json";
 
   ///API Keys
   static final String keyContentType = "Content-Type";
   static final String keyAuthorization = "Authorization";
   static final String keyGrantType = "grant_type";
   static final String keyScope = "scope";
+  static final String keyMarket = "X-EBAY-C-MARKETPLACE-ID";
+  static final String keyEndUserContext = "X-EBAY-C-ENDUSERCTX";
 
   ///Endpoints
   static final String endpointToken = baseUrl + "/identity/v1/oauth2/token";
@@ -84,9 +88,7 @@ class AppConfig {
 
   ///Mock Endpoints
   static final String mockEndpoint =
-      "http://www.mocky.io/v2/5e5ca330320000690043c21e";
-//  static final String mockEndpoint =
-//      "http://www.mocky.io/v2/5e58d7832f000077099621b4";
+      "http://www.mocky.io/v2/5e5cc4843200007d0043c2e1";
 
 
 ///UI Fields
