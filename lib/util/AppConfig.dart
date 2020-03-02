@@ -84,7 +84,17 @@ class AppConfig {
 
   ///Mock Endpoints
   static final String mockEndpoint =
-      "http://www.mocky.io/v2/5e5c3b213000002f5df9f33b";
+      "http://www.mocky.io/v2/5e5ca330320000690043c21e";
 //  static final String mockEndpoint =
 //      "http://www.mocky.io/v2/5e58d7832f000077099621b4";
+
+
+///UI Fields
+  static final String condition = "Condition: ";
+  static final String currentBidPrice = "Current Bid Price: ";
+  static final String itemLocation = "Item Location: ";
+  static final String shippingCost = "Shipping Cost: ";
+  static final String country = "Country: ";
+  static final String discountAmount = "Discount Amount: ";
+  static final String sellerName = "Seller: ";
 }
