@@ -6,6 +6,8 @@ import 'package:ebay_search_flutter/util/HexColor.dart';
 import 'package:ebay_search_flutter/views/home.dart';
 import 'package:flutter/material.dart';
 
+import '../util/AppConfig.dart';
+
 class Splash extends StatefulWidget {
   @override
   _SplashState createState() => _SplashState();
@@ -28,18 +30,22 @@ class _SplashState extends State<Splash> {
             Align(
               alignment: Alignment.center,
               child: Image.asset(
-                'assets/images/logo_trans.png',
-                height: 187,
-                width: 187,
+                AppConfig.pathLogoTrans,
+                height: AppConfig.imageSplashSize,
+                width: AppConfig.imageSplashSize,
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: EdgeInsets.fromLTRB(
+                  AppConfig.marginNormal,
+                  AppConfig.marginNormal,
+                  AppConfig.marginNormal,
+                  AppConfig.marginBottomLoader),
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: AwesomeLoader(
                   loaderType: AwesomeLoader.AwesomeLoader3,
-                  color: HexColor(AppConfig.hexColorGreen),
+                  color: HexColor(AppConfig.ebayColorBlue),
                 ),
               ),
             ),
@@ -51,7 +57,7 @@ class _SplashState extends State<Splash> {
 }
 
 Future<void> _delayScreen(BuildContext context) async {
-  await Future.delayed(Duration(milliseconds: 5000), () {
+  await Future.delayed(Duration(milliseconds: AppConfig.screenTimeout), () {
     _navigateToHome(context);
   });
 }
